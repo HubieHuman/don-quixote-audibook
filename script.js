@@ -51,13 +51,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const exportNotesBtn = document.getElementById('export-notes');
 
-    // Chapter data
-    const chapters = Array.from({ length: 20 }, (_, i) => ({
-        number: i + 1,
-        title: `Chapter ${i + 1}`,
-        file: `${String(i + 1).padStart(2, '0')} - Chapter ${i + 1}.mp3`,
-        duration: null
-    }));
+    // Chapter data with this specific book's titles
+    const chapters = [
+        { number: 1, title: "A Knight in Armor", file: "01 - Chapter 1.mp3", duration: null },
+        { number: 2, title: "Don Quixote Leaves Home", file: "02 - Chapter 2.mp3", duration: null },
+        { number: 3, title: "The Price of Meddling", file: "03 - Chapter 3.mp3", duration: null },
+        { number: 4, title: "Don Quixote and Sancho Panza Have Some Strange Adventures", file: "04 - Chapter 4.mp3", duration: null },
+        { number: 5, title: "More Strange Adventures", file: "05 - Chapter 5.mp3", duration: null },
+        { number: 6, title: "Back to La Mancha", file: "06 - Chapter 6.mp3", duration: null },
+        { number: 7, title: "Don Quixote Learns He Is Already Famous", file: "07 - Chapter 7.mp3", duration: null },
+        { number: 8, title: "On the Road Again", file: "08 - Chapter 8.mp3", duration: null },
+        { number: 9, title: "The Knight of the Wood", file: "09 - Chapter 9.mp3", duration: null },
+        { number: 10, title: "The Adventure of the Lions", file: "10 - Chapter 10.mp3", duration: null },
+        { number: 11, title: "The Puppet Show", file: "11 - Chapter 11.mp3", duration: null },
+        { number: 12, title: "At the Duke's Palace", file: "12 - Chapter 12.mp3", duration: null },
+        { number: 13, title: "The Adventure of the Wooden Horse", file: "13 - Chapter 13.mp3", duration: null },
+        { number: 14, title: "Don Quixote Advises Sancho", file: "14 - Chapter 14.mp3", duration: null },
+        { number: 15, title: "Sancho, Governor for Life", file: "15 - Chapter 15.mp3", duration: null },
+        { number: 16, title: "Danger at the Island", file: "16 - Chapter 16.mp3", duration: null },
+        { number: 17, title: "Sancho's Wisest Decision", file: "17 - Chapter 17.mp3", duration: null },
+        { number: 18, title: "Knight and Squire Reunited", file: "18 - Chapter 18.mp3", duration: null },
+        { number: 19, title: "The Knight of the White Moon", file: "19 - Chapter 19.mp3", duration: null },
+        { number: 20, title: "Don Quixote's Last Illness", file: "20 - Chapter 20.mp3", duration: null }
+    ];
 
     // Initialize
     function init() {
