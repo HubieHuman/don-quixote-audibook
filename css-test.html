@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .test-box {
+            width: 300px;
+            padding: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-box player-card">
+        <h2 style="font-family: var(--font-display); color: var(--ink-light);">Player Card</h2>
+        <p style="color: var(--ink-medium);">This uses CSS variables from style.css</p>
+    </div>
+    
+    <div class="test-box chapter-card active">
+        <h3 style="font-family: var(--font-display); color: var(--accent-sage);">Active Chapter</h3>
+        <p style="color: var(--ink-dark);">With active state styling</p>
+    </div>
+    
+    <div class="test-box tool-card">
+        <h3 style="font-family: var(--font-display); color: var(--ink-dark);">Study Tool</h3>
+        <p style="color: var(--ink-medium);">Tool card styling</p>
+    </div>
+    
+    <button class="control-btn" style="margin-top: 1rem;">
+        <i class="fas fa-play"></i> Test Button
+    </button>
+    
+    <div style="margin-top: 2rem; font-family: var(--font-body); color: var(--ink-medium);">
+        <p>CSS Variables Test:</p>
+        <ul style="text-align: left;">
+            <li>--parchment-light: <span id="parchment-light" style="background: var(--parchment-light); padding: 0 0.5rem; border: 1px solid #ccc;">sample</span></li>
+            <li>--ink-dark: <span style="color: var(--ink-dark); font-weight: bold;">sample text</span></li>
+            <li>--accent-gold: <span style="color: var(--accent-gold); font-weight: bold;">sample text</span></li>
+            <li>--accent-rust: <span style="color: var(--accent-rust); font-weight: bold;">sample text</span></li>
+        </ul>
+    </div>
+    
+    <script>
+        // Test CSS variables
+        const style = getComputedStyle(document.documentElement);
+        const parchmentLight = style.getPropertyValue('--parchment-light').trim();
+        document.getElementById('parchment-light').textContent = parchmentLight;
+        
+        console.log('CSS Variables loaded:', {
+            parchmentLight,
+            inkDark: style.getPropertyValue('--ink-dark').trim(),
+            accentGold: style.getPropertyValue('--accent-gold').trim()
+        });
+    </script>
+</body>
+</html>

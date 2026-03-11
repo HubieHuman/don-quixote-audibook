@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Adventures of Don Quixote · Audiobook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚔️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Decorative elements -->
+        <div class="manuscript-border top-left"></div>
+        <div class="manuscript-border top-right"></div>
+        <div class="manuscript-border bottom-left"></div>
+        <div class="manuscript-border bottom-right"></div>
+        <div class="ink-blot blot-1"></div>
+        <div class="ink-blot blot-2"></div>
+        <div class="ink-blot blot-3"></div>
+        
+        <header class="header">
+            <div class="title-container">
+                <h1 class="main-title">
+                    <span class="title-line-1">The Adventures</span>
+                    <span class="title-line-2">of Don Quixote</span>
+                </h1>
+                <div class="subtitle">
+                    <span class="quill-icon">✒</span>
+                    <span>by Miguel de Cervantes</span>
+                    <span class="quill-icon">✒</span>
+                </div>
+                <div class="edition-note">Student Edition · Audiobook</div>
+            </div>
+            
+            <div class="knight-illustration">
+                <div class="helmet"></div>
+                <div class="visor"></div>
+                <div class="plume"></div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Player Section -->
+            <section class="player-section">
+                <div class="player-card">
+                    <div class="player-header">
+                        <h2><i class="fas fa-volume-up"></i> Audiobook Player</h2>
+                        <div class="player-status" id="player-status">Ready to listen</div>
+                    </div>
+                    
+                    <div class="now-playing">
+                        <div class="chapter-info">
+                            <div class="chapter-number">Chapter <span id="current-chapter">1</span></div>
+                            <div class="chapter-title" id="current-title">Chapter 1</div>
+                        </div>
+                        
+                        <div class="audio-controls">
+                            <audio id="audio-player" preload="metadata"></audio>
+                            
+                            <div class="progress-container">
+                                <div class="time-display">
+                                    <span id="current-time">0:00</span>
+                                    <span id="duration">0:00</span>
+                                </div>
+                                <div class="progress-bar" id="progress-bar">
+                                    <div class="progress-fill" id="progress-fill"></div>
+                                    <div class="progress-handle" id="progress-handle"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="control-buttons">
+                                <button class="control-btn" id="prev-btn" title="Previous Chapter">
+                                    <i class="fas fa-step-backward"></i>
+                                </button>
+                                <button class="control-btn play-btn" id="play-btn" title="Play/Pause">
+                                    <i class="fas fa-play" id="play-icon"></i>
+                                </button>
+                                <button class="control-btn" id="next-btn" title="Next Chapter">
+                                    <i class="fas fa-step-forward"></i>
+                                </button>
+                                <button class="control-btn" id="repeat-btn" title="Repeat Chapter">
+                                    <i class="fas fa-redo"></i>
+                                </button>
+                                <div class="volume-control">
+                                    <i class="fas fa-volume-up volume-icon"></i>
+                                    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.7" title="Volume">
+                                </div>
+                            </div>
+                            
+                            <div class="playback-speed">
+                                <span>Playback Speed:</span>
+                                <div class="speed-options">
+                                    <button class="speed-btn" data-speed="0.75" title="0.75× Speed">0.75×</button>
+                                    <button class="speed-btn active" data-speed="1" title="Normal Speed">1×</button>
+                                    <button class="speed-btn" data-speed="1.25" title="1.25× Speed">1.25×</button>
+                                    <button class="speed-btn" data-speed="1.5" title="1.5× Speed">1.5×</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bookmark-section">
+                    <h3><i class="fas fa-bookmark"></i> Bookmark</h3>
+                    <div class="bookmark-controls">
+                        <button class="bookmark-btn" id="set-bookmark">
+                            <i class="fas fa-flag"></i> Set Bookmark
+                        </button>
+                        <button class="bookmark-btn" id="go-to-bookmark">
+                            <i class="fas fa-arrow-right"></i> Go to Bookmark
+                        </button>
+                    </div>
+                    <div class="bookmark-info" id="bookmark-info">No bookmark set</div>
+                </div>
+            </section>
+
+            <!-- Chapters Section -->
+            <section class="chapters-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book-open"></i> Chapters</h2>
+                    <div class="chapter-count">20 Chapters · Complete Edition</div>
+                </div>
+                
+                <div class="chapters-grid" id="chapters-grid">
+                    <!-- Chapters will be populated by JavaScript -->
+                </div>
+                
+                <div class="study-tools">
+                    <h3><i class="fas fa-graduation-cap"></i> Study Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Listening Timer</h4>
+                            <div id="timer-display">00:00:00</div>
+                            <button class="tool-btn" id="timer-toggle">Start Timer</button>
+                        </div>
+                        <div class="tool-card">
+                            <i class="fas fa-sticky-note"></i>
+                            <h4>Notes</h4>
+                            <textarea id="notes-area" placeholder="Take notes while listening..." title="Study Notes"></textarea>
+                            <button class="tool-btn" id="save-notes">Save Notes</button>
+                        </div>
+                        <div class="tool-card">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Progress</h4>
+                            <div class="progress-circle">
+                                <svg width="100" height="100" viewBox="0 0 36 36">
+                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="var(--parchment-dark)" stroke-width="3"/>
+                                    <path id="progress-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="var(--accent-gold)" stroke-width="3" stroke-dasharray="0, 100"/>
+                                </svg>
+                                <span id="progress-percent">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about-section">
+                <div class="about-card">
+                    <h2><i class="fas fa-info-circle"></i> About This Edition</h2>
+                    <div class="about-content">
+                        <p>This student edition of <em>The Adventures of Don Quixote</em> is designed for educational use. The complete audiobook features all 20 chapters of Cervantes' masterpiece, read in clear, engaging narration.</p>
+                        
+                        <div class="features">
+                            <h3><i class="fas fa-star"></i> Features for Students:</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Adjustable playback speed for comprehension</li>
+                                <li><i class="fas fa-check"></i> Chapter bookmarks to save your place</li>
+                                <li><i class="fas fa-check"></i> Integrated note-taking while listening</li>
+                                <li><i class="fas fa-check"></i> Visual progress tracking</li>
+                                <li><i class="fas fa-check"></i> Study timer to manage listening sessions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="usage-tip">
+                            <h4><i class="fas fa-lightbulb"></i> Tip for Study:</h4>
+                            <p>Listen to one chapter at a time, take notes on key characters and events, then review your notes before continuing. Use the bookmark feature to pick up where you left off.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="knight-icon">⚔</span>
+                    <span>Don Quixote Audiobook</span>
+                </div>
+                <div class="footer-info">
+                    <p>Designed for educational use · Portable edition · Works offline</p>
+                    <p class="copyright">© Student Edition 2026 · All audio files included</p>
+                </div>
+                <div class="footer-controls">
+                    <button class="footer-btn" id="theme-toggle">
+                        <i class="fas fa-moon"></i> Dark Mode
+                    </button>
+                    <button class="footer-btn" id="export-notes">
+                        <i class="fas fa-download"></i> Export Notes
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Quixote Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 2rem;
+            background: #f0e6d0;
+        }
+        .preview-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .component {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.12);
+        }
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <h1>Don Quixote Audiobook - Design Preview</h1>
+        
+        <div class="component">
+            <h2>Header Preview</h2>
+            <div class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 2rem; background: linear-gradient(135deg, #f8f3e9 0%, #f0e6d0 100%); border-radius: 20px; border: 2px solid #e0d6c2; position: relative;">
+                <div class="title-container">
+                    <h1 class="main-title" style="font-family: 'Cinzel', serif; font-weight: 700; font-size: 3rem; line-height: 1; margin-bottom: 0.5rem; color: #8b4513;">
+                        <span style="display: block;">The Adventures</span>
+                        <span style="display: block; color: #b7410e; font-style: italic; margin-left: 2rem;">of Don Quixote</span>
+                    </h1>
+                    <div class="subtitle" style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #5d4037; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: #d4af37;">✒</span>
+                        <span>by Miguel de Cervantes</span>
+                        <span style="color: #d4af37;">✒</span>
+                    </div>
+                    <div class="edition-note" style="font-size: 0.9rem; color: #8a9a5b; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 0.5rem 1rem; background: rgba(138, 154, 91, 0.1); border-radius: 20px; display: inline-block; border: 1px solid rgba(138, 154, 91, 0.3);">
+                        Student Edition · Audiobook
+                    </div>
+                </div>
+                <div class="knight-illustration" style="width: 100px; height: 100px; position: relative;">
+                    <div style="position: absolute; width: 60px; height: 80px; background: linear-gradient(135deg, #555 0%, #222 100%); border-radius: 30px 30px 15px 15px; top: 10px; left: 20px;"></div>
+                    <div style="position: absolute; width: 40px; height: 20px; background: #111; border-radius: 20px 20px 0 0; top: 50px; left: 30px;"></div>
+                    <div style="position: absolute; width: 30px; height: 50px; background: linear-gradient(135deg, #b7410e 0%, #d4af37 100%); border-radius: 15px; top: 0; left: 35px; transform: rotate(15deg);"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="component">
+            <h2>Player Controls</h2>
+            <div style="background: linear-gradient(135deg, #f8f3e9 0%, #f0e6d0 100%); padding: 2rem; border-radius: 12px; border: 2px solid #e0d6c2;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin: 1rem 0;">
+                    <button style="width: 50px; height: 50px; border-radius: 50%; border: none; background: linear-gradient(135deg, #f0e6d0 0%, #e0d6c2 100%); color: #2c1810; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 12px rgba(44, 24, 16, 0.1); border: 2px solid #e0d6c2;">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button style="width: 70px; height: 70px; border-radius: 50%; border: none; background: linear-gradient(135deg, #b7410e 0%, #8b0000 100%); color: white; font-size: 1.8rem; cursor: pointer; box-shadow: 0 6px 20px rgba(183, 65, 14, 0.3);">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button style="width: 50px; height: 50px; border-radius: 50%; border: none; background: linear-gradient(135deg, #f0e6d0 0%, #e0d6c2 100%); color: #2c1810; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 12px rgba(44, 24, 16, 0.1); border: 2px solid #e0d6c2;">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                
+                <div style="margin: 2rem 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-family: 'Cinzel', serif; color: #5d4037; font-size: 0.9rem;">
+                        <span>0:00</span>
+                        <span>4:32</span>
+                    </div>
+                    <div style="height: 8px; background: #e0d6c2; border-radius: 4px; position: relative;">
+                        <div style="position: absolute; height: 100%; width: 45%; background: linear-gradient(90deg, #8a9a5b, #d4af37); border-radius: 4px;"></div>
+                        <div style="position: absolute; width: 20px; height: 20px; background: #8b0000; border-radius: 50%; top: 50%; left: 45%; transform: translate(-50%, -50%); border: 3px solid white; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="component">
+            <h2>Chapter Cards</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+                <div style="background: linear-gradient(135deg, #f0e6d0 0%, #e0d6c2 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #e0d6c2; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 12px rgba(44, 24, 16, 0.08);">
+                    <div style="font-family: 'Cinzel', serif; font-size: 0.9rem; color: #8a9a5b; margin-bottom: 0.5rem; font-weight: 600;">Chapter 1</div>
+                    <div style="font-size: 1.2rem; color: #2c1810; margin-bottom: 0.5rem; font-weight: 600;">The Beginning</div>
+                    <div style="font-size: 0.85rem; color: #5d4037; display: flex; align-items: center; gap: 4px;">
+                        <i class="far fa-clock"></i> 12:45
+                    </div>
+                    <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: #e0d6c2; border: 2px solid #d4af37; border-radius: 4px; color: #2c1810; cursor: pointer; width: 100%; font-weight: 600;">Play</button>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #f8f3e9 0%, #f0e6d0 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #b7410e; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 24px rgba(44, 24, 16, 0.15); position: relative;">
+                    <div style="position: absolute; top: 10px; right: 10px; color: #b7410e; font-weight: bold;">▶</div>
+                    <div style="font-family: 'Cinzel', serif; font-size: 0.9rem; color: #8a9a5b; margin-bottom: 0.5rem; font-weight: 600;">Chapter 2</div>
+                    <div style="font-size: 1.2rem; color: #2c1810; margin-bottom: 0.5rem; font-weight: 600;">The Adventure Continues</div>
+                    <div style="font-size: 0.85rem; color: #5d4037; display: flex; align-items: center; gap: 4px;">
+                        <i class="far fa-clock"></i> 15:30
+                    </div>
+                    <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, #d4af37 0%, #b7410e 100%); border: none; border-radius: 4px; color: white; cursor: pointer; width: 100%; font-weight: 600;">Pause</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="component">
+            <h2>Study Tools</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div style="background: #f0e6d0; padding: 1.5rem; border-radius: 8px; text-align: center; border: 2px solid #e0d6c2;">
+                    <div style="font-size: 2rem; color: #d4af37; margin-bottom: 1rem;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 style="color: #2c1810; margin-bottom: 1rem;">Listening Timer</h3>
+                    <div style="font-family: 'Cinzel', serif; font-size: 2rem; color: #b7410e; margin: 1rem 0;">00:12:45</div>
+                    <button style="padding: 0.75rem 1.5rem; background: #e0d6c2; border: 2px solid #8a9a5b; border-radius: 4px; color: #2c1810; cursor: pointer; width: 100%; font-weight: 600;">Pause Timer</button>
+                </div>
+                
+                <div style="background: #f0e6d0; padding: 1.5rem; border-radius: 8px; text-align: center; border: 2px solid #e0d6c2;">
+                    <div style="font-size: 2rem; color: #d4af37; margin-bottom: 1rem;">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <h3 style="color: #2c1810; margin-bottom: 1rem;">Notes</h3>
+                    <textarea style="width: 100%; height: 100px; padding: 0.75rem; background: #f8f3e9; border: 1px solid #e0d6c2; border-radius: 4px; color: #2c1810; font-family: 'Crimson Pro', serif; resize: vertical; margin-bottom: 1rem;" placeholder="Take notes while listening..."></textarea>
+                    <button style="padding: 0.75rem 1.5rem; background: #e0d6c2; border: 2px solid #8a9a5b; border-radius: 4px; color: #2c1810; cursor: pointer; width: 100%; font-weight: 600;">Save Notes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
